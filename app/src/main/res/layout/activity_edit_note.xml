@@ -4,28 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".EditNote">
 
     <Button
-        android:id="@+id/newNoteBtn"
-        android:layout_width="44dp"
-        android:layout_height="40dp"
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:onClick="onClick"
-        android:text="+"
+        android:text="SAVE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.982" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/noteLIst"
-        android:layout_width="409dp"
-        android:layout_height="673dp"
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="399dp"
+        android:layout_height="661dp"
+        android:ems="10"
+        android:gravity="top"
+        android:inputType="textPersonName"
+        android:text="Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.965" />
+        app:layout_constraintVertical_bias="0.012" />
 </androidx.constraintlayout.widget.ConstraintLayout>
