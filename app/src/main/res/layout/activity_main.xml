@@ -10,7 +10,7 @@
         android:id="@+id/newNoteBtn"
         android:layout_width="44dp"
         android:layout_height="40dp"
-        android:onClick="onClick"
+        android:onClick="onClickAddNewNote"
         android:text="+"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.023" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/noteLIst"
+        android:id="@+id/noteList"
         android:layout_width="409dp"
         android:layout_height="673dp"
         app:layout_constraintBottom_toBottomOf="parent"
