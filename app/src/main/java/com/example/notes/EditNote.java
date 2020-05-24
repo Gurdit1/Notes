@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -48,24 +49,22 @@ public class EditNote extends AppCompatActivity {
         getSupportActionBar().setTitle(noteTitle);
 
         //sets EditText
-        editText.setText(noteContent);
+        if((noteContent.isEmpty())||(noteContent == null)) {
+            editText.setHint("Enter text here");
+        }
+        else{
+            editText.setText(noteContent);
+        }
+        Log.e("Check note content", "A" + noteContent + "A");
 
     }
 
     @Override
     public void onBackPressed(){
-        saveNote();
-        super.onBackPressed();
-    }
-
-    public void saveNote(){
         String noteContent = editText.getText().toString();
         noteDAO.updateOneNote(noteContent, id);
         goToMainActivity();
-    }
-
-    public void onClickSave(View view){
-        saveNote();
+        super.onBackPressed();
     }
 
     public void goToMainActivity(){
