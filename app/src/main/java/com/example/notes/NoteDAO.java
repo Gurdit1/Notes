@@ -29,8 +29,12 @@ public interface NoteDAO {
     @Query("UPDATE notesTable SET noteContent = :noteContent WHERE id = :id")
     public void updateOneNote(String noteContent, long id);
 
-//    //Deletes all data from the database - Only used for testing
-//    @Query("DELETE FROM notesTable")
-//    public void doNotUse();
+    //Deletes specific note
+    @Query("DELETE FROM notesTable WHERE id = :id")
+    public void deleteOneNote(long id);
+
+    //Deletes all data from the database - Only used for testing
+    @Query("DELETE FROM notesTable")
+    public void doNotUse();
 
 }

@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
 
         NoteDAO noteDAO = database.getNoteDAO();
 
+
         allNotes = noteDAO.getAllNotes();
 
         //populate the ArrayList for the RecyclerView
