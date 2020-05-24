@@ -11,6 +11,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 public class EditNote extends AppCompatActivity {
@@ -51,10 +52,20 @@ public class EditNote extends AppCompatActivity {
 
     }
 
-    public void onClickSave(View view){
+    @Override
+    public void onBackPressed(){
+        saveNote();
+        super.onBackPressed();
+    }
+
+    public void saveNote(){
         String noteContent = editText.getText().toString();
         noteDAO.updateOneNote(noteContent, id);
         goToMainActivity();
+    }
+
+    public void onClickSave(View view){
+        saveNote();
     }
 
     public void goToMainActivity(){
